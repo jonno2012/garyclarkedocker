@@ -10,9 +10,11 @@ jobs:
             - name: Check Docker Username length
               env:
                 DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-              run: echo "Docker Username length ${#secrets.DOCKER_USERNAME}"
+              run: echo "Docker Username length ${#DOCKER_USERNAME}"
             - name: Echo Docker username
-              run: echo "Docker Username is ${{ secrets.DOCKER_USERNAME }}"
+              env:
+                DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+              run: echo "Docker Username is ${{ DOCKER_USERNAME }}"
             - uses: actions/checkout@v3
             - name: Install Composer Dependencies
               working-directory: ./app
