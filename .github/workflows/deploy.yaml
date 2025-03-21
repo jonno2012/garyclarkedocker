@@ -35,7 +35,7 @@ jobs:
             - name: Push Docker image
               env:
                 DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-                DOCKER_PASSWORD: ${{ secrets.DOCKER_USERNAME2 }}
-              run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_USERNAME2 }}
+                DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
+              run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             - run: docker push bakedbean78/php-composer:1.1
             - run: docker push bakedbean78/nginx-php:1.0
