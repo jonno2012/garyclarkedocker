@@ -9,6 +9,8 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - name: Install Composer Dependencies
+            - name: Echo Docker username
+              run: echo "Docker Username is: ${{ secrets.DOCKER_USERNAME }}"
               working-directory: ./app
               run: composer install --prefer-dist
             - name: Run Tests
