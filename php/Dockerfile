@@ -47,4 +47,4 @@ FROM app as app_dev
 # everything under app_dev will be used to build the app_dev image, as called in the docker-compose.dev.yaml file
 
 # RUN set -eux; \
-    # install-php-extensions xdebug;
+#     install-php-extensions xdebug;
