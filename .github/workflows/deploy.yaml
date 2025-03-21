@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Check Docker Username length
-              run: echo "Docker Username length ${#DOCKER_USERNAME}"
+              run: echo "Docker Username length ${#secrets.DOCKER_USERNAME}"
             - name: Echo Docker username
               run: echo "Docker Username is ${{ secrets.DOCKER_USERNAME }}"
             - uses: actions/checkout@v3
