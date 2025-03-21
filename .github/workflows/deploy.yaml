@@ -10,7 +10,7 @@ jobs:
             - name: Check Docker Username length
               env:
                 DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-              run: echo "Docker Username length: ${#DOCKER_USERNAME}"
+              run: echo "Docker Username length ${#DOCKER_USERNAME}"
             - name: Echo Docker username
               env:
                 DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
