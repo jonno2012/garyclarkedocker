@@ -13,16 +13,16 @@ jobs:
               run: echo "Docker Username length ${#DOCKER_USERNAME}"
             - name: Echo Docker username
               env:
-                DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-              run: echo "Docker Password is ${{ secrets.DOCKER_PASSWORD }}"
-            - name: Check Docker Password length
-              env:
-                DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-              run: echo "Docker Username length ${#DOCKER_USERNAME}"
-            - name: Echo Docker username
-              env:
                 DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
               run: echo "Docker Username is ${{ secrets.DOCKER_USERNAME }}"
+            - name: Check Docker Password length
+              env:
+                DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+              run: echo "Docker Password length ${#DOCKER_PASSWORD}"
+            - name: Echo Docker password
+              env:
+                DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+              run: echo "Docker Password is ${{ secrets.DOCKER_PASSWORD }}"
             - uses: actions/checkout@v3
             - name: Install Composer Dependencies
               working-directory: ./app
